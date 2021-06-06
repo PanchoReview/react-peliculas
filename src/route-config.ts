@@ -15,15 +15,15 @@ import FiltroPeliculas from "./Components/Peliculas/FiltroPeliculas"
 const rutas = [
     {path: "/", componente: LandingPage, exact: true},
 
-    {path: "/generos", componente: IndiceGeneros},    
+    {path: "/generos", componente: IndiceGeneros, exact: true},    
     {path: "/generos/crear", componente: CrearGenero},    
     {path: "/generos/editar", componente: EditarGenero},    
 
-    {path: "/actores", componente: IndiceActores},    
+    {path: "/actores", componente: IndiceActores, exact: true},    
     {path: "/actores/crear", componente: CrearActores},    
     {path: "/actores/editar", componente: EditarActores},   
 
-    {path: "/cines", componente: IndiceCines},    
+    {path: "/cines", componente: IndiceCines, exact: true},    
     {path: "/cines/crear", componente: CrearCine},    
     {path: "/cines/editar", componente: EditarCine},    
     

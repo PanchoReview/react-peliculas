@@ -4,7 +4,7 @@ export default function IndiceCines() {
     return (
         <>
             <h3>Indice cines</h3>
-            <Link to="/cine/crear">Crear cine</Link>
+            <Link to="/cines/crear">Crear cine</Link>
         </>
 
     )

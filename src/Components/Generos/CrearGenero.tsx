@@ -1,5 +1,14 @@
+import { useHistory } from "react-router"
+import Button from "../Utils/Button"
+
 export default function CrearGenero() {
-    return(
-        <>Crear genero</>
+    const history = useHistory()
+
+    return (
+        <>
+            <h3>Crear genero</h3>
+            <Button onClick={() => history.push("/generos")}>Salvar</Button>
+        </>
+
     )
 }
