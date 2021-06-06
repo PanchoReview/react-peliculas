@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ListadoPeliculas from "./Components/Peliculas/ListadoPeliculas";
 import { landingPageDTO } from "./Components/Peliculas/Peliculas.model";
+import Button from "./Components/Utils/Button";
 
 function App() {
   const [peliculas, setPeliculas] = useState<landingPageDTO>({})
@@ -15,8 +16,8 @@ function App() {
             poster: "https://m.media-amazon.com/images/M/MV5BMGZlNTY1ZWUtYTMzNC00ZjUyLWE0MjQtMTMxN2E3ODYxMWVmXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_UX182_CR0,0,182,268_AL_.jpg"
           },
           {
-            id: 2, 
-            titulo: "Moana", 
+            id: 2,
+            titulo: "Moana",
             poster: "https://m.media-amazon.com/images/M/MV5BMjI4MzU5NTExNF5BMl5BanBnXkFtZTgwNzY1MTEwMDI@._V1_UX182_CR0,0,182,268_AL_.jpg"
           }
         ],
@@ -35,11 +36,16 @@ function App() {
 
   return (
     <>
-     <h3>En cartelera</h3> 
-     <ListadoPeliculas peliculas={peliculas.enCartelera} />
+      <div className="container">
+      <Button>Mi boton</Button>
 
-     <h3>Próximos estrenos</h3> 
-     <ListadoPeliculas peliculas={peliculas.proximosEstrenos} />
+        <h3>En cartelera</h3>
+        <ListadoPeliculas peliculas={peliculas.enCartelera} />
+
+        <h3>Próximos estrenos</h3>
+        <ListadoPeliculas peliculas={peliculas.proximosEstrenos} />
+      </div>
+
     </>
   )
 }
