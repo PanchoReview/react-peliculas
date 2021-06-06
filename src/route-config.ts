@@ -11,25 +11,27 @@ import EditarCine from "./Components/Cines/EditarCine"
 import CrearPelicula from "./Components/Peliculas/CrearPelicula"
 import EditarPelicula from "./Components/Peliculas/EditarPelicula"
 import FiltroPeliculas from "./Components/Peliculas/FiltroPeliculas"
+import RedireccionarLanding from "./Components/Utils/RedireccionarLanding"
 
-const rutas = [
-    {path: "/", componente: LandingPage, exact: true},
-
+const rutas = [    
     {path: "/generos", componente: IndiceGeneros, exact: true},    
     {path: "/generos/crear", componente: CrearGenero},    
-    {path: "/generos/editar", componente: EditarGenero},    
+    {path: "/generos/editar/:id(\\d+)", componente: EditarGenero},    
 
     {path: "/actores", componente: IndiceActores, exact: true},    
     {path: "/actores/crear", componente: CrearActores},    
-    {path: "/actores/editar", componente: EditarActores},   
+    {path: "/actores/editar/:id(\\d+)", componente: EditarActores},   
 
     {path: "/cines", componente: IndiceCines, exact: true},    
     {path: "/cines/crear", componente: CrearCine},    
-    {path: "/cines/editar", componente: EditarCine},    
+    {path: "/cines/editar/:id(\\d+)", componente: EditarCine},    
     
     {path: "/peliculas/crear", componente: CrearPelicula},    
     {path: "/peliculas/editar", componente: EditarPelicula},
     {path: "/peliculas/filtrar", componente: FiltroPeliculas},
+
+    {path: "/", componente: LandingPage, exact: true},
+    {path: "*", componente: RedireccionarLanding}
 ]
 
 export default rutas
