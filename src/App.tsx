@@ -1,9 +1,8 @@
 import React from "react";
 import { Switch } from "react-router";
 import { BrowserRouter, Route } from "react-router-dom";
-import IndiceGeneros from "./Components/Generos/IndiceGeneros";
-import LandingPage from "./Components/LandingPage";
 import Menu from "./Components/Utils/Menu";
+import rutas from './route-config'
 
 function App() {  
   return (
@@ -13,13 +12,9 @@ function App() {
 
         <div className="container">
           <Switch>
-            <Route exact path="/">
-              <LandingPage />
-            </Route>
-
-            <Route path="/generos">
-              <IndiceGeneros />
-            </Route>
+            {rutas.map(ruta => <Route key={ruta.path} path={ruta.path} exact={ruta.exact}>
+              <ruta.componente />
+            </Route>)}
           </Switch>
         </div>
       </BrowserRouter>
