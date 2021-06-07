@@ -3,6 +3,9 @@ import { Switch } from "react-router";
 import { BrowserRouter, Route } from "react-router-dom";
 import Menu from "./Components/Utils/Menu";
 import rutas from './route-config'
+import configurarValidaciones from "./validaciones"
+
+configurarValidaciones()
 
 function App() {  
   return (
