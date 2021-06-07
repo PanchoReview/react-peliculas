@@ -1,5 +1,7 @@
+import { Field, Form, Formik } from "formik"
 import { useHistory } from "react-router"
 import Button from "../Utils/Button"
+import {Link} from "react-router-dom"
 
 export default function CrearGenero() {
     const history = useHistory()
@@ -7,7 +9,20 @@ export default function CrearGenero() {
     return (
         <>
             <h3>Crear genero</h3>
-            <Button onClick={() => history.push("/generos")}>Salvar</Button>
+
+            <Formik initialValues={{
+                nombre: ""
+            }} onSubmit={values => {console.log(values)}}>
+                <Form>
+                    <div className="form-group">
+                        <label htmlFor="nombre">Nombre</label>
+                        <Field name="nombre" className="form-control" />
+                    </div>
+
+                    <Button type="submit">Salvar</Button>
+                    <Link className="btn btn-secondary" to="/generos">Cancelar</Link>
+                </Form>
+            </Formik>
         </>
 
     )
